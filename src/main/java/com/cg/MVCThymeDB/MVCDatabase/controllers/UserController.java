@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.cg.MVCThymeDB.MVCDatabase.pojo.*;
 import com.cg.MVCThymeDB.MVCDatabase.services.UserServices;
-import org.springframework.ui.Model;
+
 
 // Marks class as Controller
 @RestController
@@ -20,7 +20,7 @@ public class UserController {
     // Initial view is the index.html page. In it, there is a link pointing to the following mapping "/register"
     // Returns ModelAndView object, initialized with the view "/registration_form", which links to registration_form.html
     @GetMapping("/register")
-    public ModelAndView showForm(Model model){
+    public ModelAndView showForm(){
 
         // Object that will be worked with in the registration form
         User user = new User();
