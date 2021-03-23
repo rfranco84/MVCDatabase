@@ -1,0 +1,36 @@
+<!-- This page displays all the users in the database in a table form -->
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.com">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>
+            All Users
+        </title>
+        <body>
+            <div>
+                <table style="width: 100%">
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Email Address</th>
+                    </tr>
+
+                    <!-- Iteration using Thymeleaf server-side render engine. HINT: Think of a for-each loop -->
+                    <tr th:each="user: ${user_list}">
+                        <th th:text="${user.id}">
+                        <th th:text="${user.firstName}">
+                        <th th:text="${user.lastName}">
+                        <th th:text="${user.phoneNumber}">
+                        <th th:text="${user.emailAddress}">
+                    </tr>
+                </table>
+                <span>
+                    <!-- Client can add another user. Client is taken once again to the showForm method in the controller -->
+                    <p><a href="/register">Add another user</a></p>
+                </span>
+            </div>
+        </body>
+    </head>
+</html>

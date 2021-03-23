@@ -1,0 +1,22 @@
+<!-- This page is shown to indicate that a user has been registerred successfully -->
+<!DOCTYPE html>
+<html xmlns="http://www.thymelead.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Success!</title>
+    </head>
+
+    
+    <body>
+        <h1>SUCCESS!</h1>
+
+        <!-- user is being used, so we need the ${} even if we're using a property from it. -->
+        <p th:text="'Thank you for registering ' + ${user.firstName}+'!'" >
+        <p>Would you like to register someone else?</p>
+        
+        <!-- If yes, we reload a blank registration form. If no, we are taken to the controller method marked with "/list_users", which takes us to a page
+        displaying the database in table form. -->
+        <p><a href="/register">yes</a></p>
+        <p><a href="/list_users">no</a></p>
+    </body>
+</html>
